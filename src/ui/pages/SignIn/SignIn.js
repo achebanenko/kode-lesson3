@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.paddings.main}px;
 `
 
-export const SignIn = ({ value, status, changeNumber, signIn }) => (
+export const SignIn = ({ value, status = '', changeNumber, signIn }) => (
   <PageTemplate>
     <Header title="Ввод номера телефона" />
     <Divider />
