@@ -1,14 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { styled } from '@ui/theme'
 import { Body2 } from '@ui/atoms/Typography'
 import { Header, TextField, ButtonAccent, RequestStatus } from '@ui/molecules'
-import { PageTemplate, HBox, Flex1, Divider } from '@ui/atoms'
-
-const Wrapper = styled.div`
-  padding: ${({ theme }) => theme.paddings.main}px;
-`
+import { PageTemplate, Wrapper, HBox, Flex1, Divider } from '@ui/atoms'
 
 export const SignIn = ({ value, status = '', changeNumber, signIn }) => (
   <PageTemplate>

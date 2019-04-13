@@ -3,4 +3,5 @@ export const routes = {
   CONFIRM: '/confirm',
   EXCHANGE: '/exchange',
   SELECT: '/select',
+  RECEIPT: '/receipt',
 }

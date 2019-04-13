@@ -4,6 +4,8 @@ import { routes } from '../../routes'
 import * as actions from './actions'
 import { getCodeValue } from './selectors'
 
+//import { reset as resetExchange } from '../exchange/actions'
+
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export const confirmNumber = () => async (dispatch, getState) => {
@@ -23,8 +25,9 @@ export const confirmNumber = () => async (dispatch, getState) => {
     }
 
     await delay(1000)
-
+    
     dispatch(actions.resetState())
+    //dispatch(resetExchange())
     dispatch(push(routes.EXCHANGE))
   } catch (e) {
     dispatch(actions.failure())
