@@ -19,7 +19,8 @@ export const CheckboxWithText = ({
   error,
   disabled,
 }) => (
-  <Container onClick={typeof children === 'string' ? onPress : undefined}>
+  <Container onClick={typeof children === 'string' ? onPress : undefined}
+  >
     <CheckboxField
       value={value}
       error={error}
