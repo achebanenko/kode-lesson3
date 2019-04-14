@@ -5,6 +5,7 @@ const initialState = {
   country2: '',
   amount1: '',
   amount2: '',
+  deal: '',
   deliveryTimeFrom: '',
   deliveryTimeTo: '',
   agreeToTerms: false,
@@ -28,11 +29,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         amount1: action.payload.value,
+        deal: 'sell',
       }
     case types.CHANGE_AMOUNT_2:
       return {
         ...state,
         amount2: action.payload.value,
+        deal: 'buy',
       }
 
     case types.CHANGE_DELIVERY_TIME_FROM:

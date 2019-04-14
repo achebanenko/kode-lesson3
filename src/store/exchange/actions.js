@@ -46,7 +46,7 @@ export const changeAgreeToTerms = value => ({
   }
 })
 
-export const reset = () => ({
+export const resetExchange = () => ({
   type: types.RESET,
 })
 

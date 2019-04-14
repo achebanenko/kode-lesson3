@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { routes } from '../../../routes'
 
 import { PageTemplate, Wrapper, HBox, Flex1, Divider } from '@ui/atoms'
 import { Header, ButtonAccent, SelectField, CheckboxWithText, TextField } from '@ui/molecules'
-import { DeliveryTime } from '@ui/organisms'
+import { Convertation, DeliveryTime } from '@ui/organisms'
 
 export const Exchange = ({
   history,
@@ -17,6 +17,7 @@ export const Exchange = ({
   changeAmount1,
   amount2,
   changeAmount2,
+  deal,
 
   deliveryTimeFrom,
   changeDeliveryTimeFrom,
@@ -29,11 +30,7 @@ export const Exchange = ({
   status,
   reset,
   exchange,
-}) => { 
-  
-  useEffect(() => {
-    //reset()
-  }, [])
+}) => {
 
   return (
     <PageTemplate>
@@ -52,21 +49,31 @@ export const Exchange = ({
           />
 
           <Divider />
-          <HBox />
-          <TextField
-            label="Российский рубль (RUB)"
-            value={amount1}
-            onChange={changeAmount1}
-            tip=""
-            endAdornment="₽"
-          />
-          <HBox />
-          <TextField
-            label="Фунт стерлингов (GBP)"
-            value={amount2}
-            onChange={changeAmount2}
-            tip=""
-            endAdornment="£"
+
+          <Convertation 
+            amount1={amount1}
+            amount2={amount2}
+            deal={deal}
+            render={({ value1, value2 }) => (
+              <>
+                <HBox />
+                <TextField
+                  label="Российский рубль (RUB)"
+                  value={value1}
+                  onChange={changeAmount1}
+                  tip=""
+                  endAdornment="₽"
+                />
+                <HBox />
+                <TextField
+                  label="Фунт стерлингов (GBP)"
+                  value={value2}
+                  onChange={changeAmount2}
+                  tip=""
+                  endAdornment="£"
+                />
+              </>
+            )}
           />
 
           <HBox />

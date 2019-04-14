@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
   country2: selectors.getCountry2Value(state),
   amount1: selectors.getAmount1Value(state),
   amount2: selectors.getAmount2Value(state),
+  deal: selectors.getDeal(state),
   deliveryTimeFrom: selectors.getDeliveryTimeFromValue(state),
   deliveryTimeTo: selectors.getDeliveryTimeToValue(state),
   agreeToTerms: selectors.getAgreeToTermsValue(state),
@@ -26,7 +27,7 @@ export const ExchangeContainer = connect(
     changeDeliveryTimeFrom: actions.changeDeliveryTimeFrom,
     changeDeliveryTimeTo: actions.changeDeliveryTimeTo,
     changeAgreeToTerms: actions.changeAgreeToTerms,
-    reset: actions.reset,
+    resetExchange: actions.resetExchange,
     exchange
   },
 )(Exchange)
