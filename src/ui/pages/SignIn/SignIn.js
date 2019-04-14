@@ -24,7 +24,7 @@ export const SignIn = ({ value, status = '', changeNumber, signIn }) => (
       </Wrapper>
       <RequestStatus
         status={status}
-        loadingMessage="Телефон отправлется"
+        loadingMessage="Телефон отправляется"
         successMessage="Номер успешно отправлен"
         failureMessage="Произошла неизвестная ошибка"
       />

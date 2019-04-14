@@ -21,3 +21,14 @@ export const exchange = () => async (dispatch, getState) => {
     dispatch(actions.errored())
   }
 }
+
+
+export const selectCountry1 = (id) => (dispatch) => {
+  dispatch(actions.changeCountry1(id))
+  dispatch(push(routes.EXCHANGE))
+}
+
+export const selectCountry2 = (id) => (dispatch) => {
+  dispatch(actions.changeCountry2(id))
+  dispatch(push(routes.EXCHANGE))
+}

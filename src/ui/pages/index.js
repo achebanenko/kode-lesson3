@@ -1,5 +1,6 @@
 export { SignInContainer as SignIn } from './SignIn/SignIn.connect'
 export { SignInConfirmContainer as SignInConfirm } from './SignInConfirm/SignInConfirm.connect'
 export { ExchangeContainer as Exchange  } from './Exchange/Exchange.connect'
-export { SelectCountry } from './SelectCountry/SelectCountry'
+export { SelectCountryContainer as SelectCountry } from './SelectCountry/SelectCountry.connect'
+//export { SelectCountry } from './SelectCountry/SelectCountry'
 export { Receipt } from './Receipt/Receipt'

@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+import { routes } from '../../../routes'
+
 import { PageTemplate, Wrapper, HBox, Flex1, Divider } from '@ui/atoms'
 import { Header, ButtonAccent, SelectField, CheckboxWithText, TextField } from '@ui/molecules'
 import { DeliveryTime } from '@ui/organisms'
 
-export const Exchange = ({ 
+export const Exchange = ({
+  history,
+  
   country1,
-  changeCountry1,
   country2,
-  changeCountry2,
 
   amount1,
   changeAmount1,
@@ -28,24 +30,25 @@ export const Exchange = ({
   reset,
   exchange,
 }) => { 
+  
   useEffect(() => {
-    reset()
+    //reset()
   }, [])
 
   return (
     <PageTemplate>
-      <Header icon="back" />
+      <Header icon="back" action={history.goBack} />
       <Flex1>
         <Wrapper>
           <SelectField
             label="Страна 1"
             value={country1}
-            onPress="" //{changeCountry1}
+            onPress={() => history.push(routes.SELECT, { name: 'country1' })}
           />
           <SelectField
             label="Страна 2"
             value={country2}
-            onPress="" //{changeCountry2}
+            onPress={() => history.push(routes.SELECT, { name: 'country2' })}
           />
 
           <Divider />
@@ -70,8 +73,8 @@ export const Exchange = ({
           <DeliveryTime
             fromValue={deliveryTimeFrom}
             toValue={deliveryTimeTo}
-            fromAction="" //{changeDeliveryTimeFrom}
-            toAction="" //{changeDeliveryTimeTo}
+            fromAction={() => undefined} //{changeDeliveryTimeFrom}
+            toAction={() => undefined} //{changeDeliveryTimeTo}
             tip="Выберите время получения"
           />
 
