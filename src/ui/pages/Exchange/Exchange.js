@@ -12,6 +12,8 @@ export const Exchange = ({
   
   country1,
   country2,
+  currency1,
+  currency2,
 
   amount1,
   changeAmount1,
@@ -28,7 +30,6 @@ export const Exchange = ({
   changeAgreeToTerms,
 
   status,
-  reset,
   exchange,
 }) => {
 
@@ -58,7 +59,7 @@ export const Exchange = ({
               <>
                 <HBox />
                 <TextField
-                  label="Российский рубль (RUB)"
+                  label={`Валюта (${currency1})`}
                   value={value1}
                   onChange={changeAmount1}
                   tip=""
@@ -66,7 +67,7 @@ export const Exchange = ({
                 />
                 <HBox />
                 <TextField
-                  label="Фунт стерлингов (GBP)"
+                  label={`Валюта (${currency2})`}
                   value={value2}
                   onChange={changeAmount2}
                   tip=""

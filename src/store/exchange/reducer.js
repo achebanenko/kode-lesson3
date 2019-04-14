@@ -3,6 +3,8 @@ import * as types from './types'
 const initialState = {
   country1: '',
   country2: '',
+  currency1: '',
+  currency2: '',
   amount1: '',
   amount2: '',
   deal: '',
@@ -17,12 +19,14 @@ export const reducer = (state = initialState, action) => {
     case types.CHANGE_COUNTRY_1:
       return {
         ...state,
-        country1: action.payload.value,
+        currency1: action.payload.id,
+        country1: action.payload.title,
       }
     case types.CHANGE_COUNTRY_2:
       return {
         ...state,
-        country2: action.payload.value,
+        currency2: action.payload.id,
+        country2: action.payload.title,
       }
 
     case types.CHANGE_AMOUNT_1:

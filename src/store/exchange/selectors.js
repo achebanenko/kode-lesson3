@@ -1,5 +1,7 @@
-export const getCountry1Value = state => state.exchange.country1
-export const getCountry2Value = state => state.exchange.country2
+export const getCountry1 = state => state.exchange.country1
+export const getCountry2 = state => state.exchange.country2
+export const getCurrency1 = state => state.exchange.currency1
+export const getCurrency2 = state => state.exchange.currency2
 
 export const getAmount1Value = state => state.exchange.amount1
 export const getAmount2Value = state => state.exchange.amount2

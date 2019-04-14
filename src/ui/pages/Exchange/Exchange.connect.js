@@ -6,8 +6,10 @@ import { exchange } from '@store/exchange/thunks'
 import { Exchange } from './Exchange'
 
 const mapStateToProps = state => ({
-  country1: selectors.getCountry1Value(state),
-  country2: selectors.getCountry2Value(state),
+  country1: selectors.getCountry1(state),
+  country2: selectors.getCountry2(state),
+  currency1: selectors.getCurrency1(state),
+  currency2: selectors.getCurrency2(state),
   amount1: selectors.getAmount1Value(state),
   amount2: selectors.getAmount2Value(state),
   deal: selectors.getDeal(state),

@@ -1,10 +1,10 @@
 import React from 'react'
 
 function buying(amount) {
-  return 0.85 * amount
+  return amount * 0.75
 }
 function selling(amount) {
-  return 1.25 * amount
+  return amount * 1.85
 }
 
 function convert(amount, operation) {
@@ -12,7 +12,7 @@ function convert(amount, operation) {
   if(Number.isNaN(input)) {
     return ''
   }
-  const output = operation(input)
+  const output = operation(amount)
   const rounded = Math.round(output * 100) / 100;
   return rounded.toString()
 }
@@ -22,7 +22,7 @@ export const Convertation = ({ amount1, amount2, deal, render }) => {
   let value2 = ''
 
   if (deal === 'sell') {
-    value1 = amount1 
+    value1 = amount1
     value2 = convert(amount1, buying)
   } else if (deal === 'buy') {
     value2 = amount2

@@ -1,15 +1,17 @@
 import * as types from './types'
 
-export const changeCountry1 = value => ({
+export const changeCountry1 = ({id,title}) => ({
   type: types.CHANGE_COUNTRY_1,
   payload: {
-    value,
+    id,
+    title,
   }
 })
-export const changeCountry2 = value => ({
+export const changeCountry2 = ({id,title}) => ({
   type: types.CHANGE_COUNTRY_2,
   payload: {
-    value,
+    id,
+    title,
   }
 })
 

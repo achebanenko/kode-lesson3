@@ -25,8 +25,9 @@ export const SelectCountry = ({
       <CountriesList
         title={'История поиска'}
         list={[
-          { title: 'Российская Федерация', id: 'RF' },
-          { title: 'Соединенные Штаты Америки', id: 'USA' },
+          { title: 'Российская Федерация', id: 'RUB' },
+          { title: 'Соединенные Штаты Америки', id: 'USD' },
+          { title: 'Великобритания', id: 'GBP' },
         ]}
         selectCountry={handleSelect}
       />
