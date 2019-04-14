@@ -1,16 +1,19 @@
 import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
 
-import { getNumberValue, getStatus } from '@store/signIn/selectors'
-import { changeNumber } from '@store/signIn/actions'
+import { getStatus } from '@store/signIn/selectors'
 import { signIn } from '@store/signIn/thunks'
 import { SignIn } from './SignIn'
 
+const SignInReduxForm = reduxForm({
+  form: 'signin',
+})(SignIn)
+
 const mapStateToProps = state => ({
-  value: getNumberValue(state),
   status: getStatus(state),
 })
 
 export const SignInContainer = connect(
   mapStateToProps,
-  { changeNumber, signIn },
-)(SignIn)
+  { signIn },
+)(SignInReduxForm)

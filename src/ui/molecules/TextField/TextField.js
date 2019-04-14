@@ -51,13 +51,10 @@ export const TextField = withTheme(
     placeholder,
     label,
     error,
-    value,
     tip,
     valid,
-    onChange,
     onBlur,
     onFocus,
-    name,
   }) => {
     const [focused, setFocused] = useState(false)
     const handleFocus = e => {
@@ -83,11 +80,8 @@ export const TextField = withTheme(
             <VBox />
           )}
           <StyledInput
-            name={name}
             placeholder={placeholder ? placeholder : ''}
             disabled={disabled}
-            value={value}
-            onChange={e => onChange(e.currentTarget.value)}
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
@@ -109,19 +103,16 @@ export const TextField = withTheme(
 )
 
 TextField.propTypes = {
-  name: PropTypes.string,
-  status: PropTypes.oneOf(['loading', 'success']),
+  status: PropTypes.oneOf(['','loading', 'success']),
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   label: PropTypes.string,
   error: PropTypes.string,
-  value: PropTypes.string.isRequired,
   tip: PropTypes.string,
   valid: PropTypes.bool,
   startAdornment: PropTypes.node,
   endAdornment: PropTypes.node,
 
-  onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
 }

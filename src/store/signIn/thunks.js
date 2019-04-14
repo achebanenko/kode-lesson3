@@ -2,15 +2,15 @@ import { push } from 'connected-react-router'
 
 import { routes } from '../../routes'
 import * as actions from './actions'
-import { getNumberValue } from './selectors'
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-export const signIn = () => async (dispatch, getState) => {
+export const signIn = (values) => async (dispatch) => {
   dispatch(actions.start())
 
   try {
-    const number = getNumberValue(getState())
+    const { number } = values
+  
     const res = await fetch(
       `https://my-json-server.typicode.com/IgorAntonov/confirmation/number?${number}`,
     )

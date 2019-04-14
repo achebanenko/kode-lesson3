@@ -7,7 +7,7 @@ import LocalForage from 'localforage'
 import { createRootReducer } from './rootReducer'
 
 const persistConfig = {
-  key: 'root1',
+  key: 'artchebanenko-lesson-3-redux-form',
   storage: LocalForage,
   blacklist: ['router'],
 }
