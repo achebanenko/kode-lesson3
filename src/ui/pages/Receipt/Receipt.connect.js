@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
 import * as selectors from '@store/exchange/selectors'
+import { getNumberValue } from '@store/signIn/selectors'
 import { Receipt } from './Receipt'
 
 const mapStateToProps = state => ({
@@ -13,6 +14,7 @@ const mapStateToProps = state => ({
   deliveryTimeFrom: selectors.getDeliveryTimeFromValue(state),
   deliveryTimeTo: selectors.getDeliveryTimeToValue(state),
   agreeToTerms: selectors.getAgreeToTermsValue(state),
+  number: getNumberValue(state),
 })
 
 export const ReceiptContainer = connect(

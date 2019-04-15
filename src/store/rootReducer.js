@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 
-import { reducer as signIn } from './signIn/reducer'
+//import { reducer as signIn } from './signIn/reducer'
+import { reducer as signIn } from './signIn/redux-act'
 import { reducer as confirm } from './confirm/reducer'
 import { reducer as exchange } from './exchange/reducer'
 

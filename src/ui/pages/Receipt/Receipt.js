@@ -6,6 +6,7 @@ import { PageTemplate, Wrapper, HBox, Flex1 } from '@ui/atoms'
 import { Header } from '@ui/molecules'
 
 export const Receipt = ({
+  number,
   currency1,
   currency2,
   amount1,
@@ -45,6 +46,9 @@ export const Receipt = ({
 
             <HBox/>
             <div>From {deliveryTimeFrom || '00 : 00'} to {deliveryTimeTo || '23 : 59'}</div>
+
+            <HBox/>
+            <div>Signin number {number}</div>
             <div>Agree to terms {agreeToTerms ? 'true' : 'false'}</div>
           </Wrapper>
         </Flex1>
@@ -53,6 +57,7 @@ export const Receipt = ({
 }
 
 Receipt.propTypes = {
+  number: PropTypes.string,
   currency1: PropTypes.string,
   currency2: PropTypes.string,
   amount1: PropTypes.string,

@@ -1,7 +1,7 @@
 import { push } from 'connected-react-router'
 
 import { routes } from '../../routes'
-import * as actions from './actions'
+import * as actions from './redux-act'
 import { getNumberValue } from './selectors'
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))

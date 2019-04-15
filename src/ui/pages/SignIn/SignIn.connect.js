@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { getNumberValue, getStatus } from '@store/signIn/selectors'
-import { changeNumber } from '@store/signIn/actions'
+import { changeNumber } from '@store/signIn/redux-act'
 import { signIn } from '@store/signIn/thunks'
 import { SignIn } from './SignIn'
 
