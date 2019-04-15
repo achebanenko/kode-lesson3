@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+//bank's operations
 function buying(amount, rate = 0.75) {
   return amount * rate
 }
@@ -31,6 +32,7 @@ export const Convertation = ({
   let value1 = ''
   let value2 = ''
 
+  //I want to sell or buy
   if (deal === 'sell') {
     value1 = amount1
     value2 = convert(amount1, buying)
