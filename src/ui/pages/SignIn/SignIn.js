@@ -20,6 +20,7 @@ export const SignIn = ({ value, status = '', changeNumber, signIn }) => (
           placeholder="9XXXXXXXXX"
           onChange={changeNumber}
           value={value}
+          status={status} 
         />
       </Wrapper>
       <RequestStatus
@@ -30,7 +31,13 @@ export const SignIn = ({ value, status = '', changeNumber, signIn }) => (
       />
     </Flex1>
     <Wrapper>
-      <ButtonAccent onPress={signIn}>Отправить</ButtonAccent>
+      <ButtonAccent 
+        loading={status === 'loading'} 
+        disabled={status === 'success'} 
+        onPress={signIn}
+      >
+        Отправить
+      </ButtonAccent>
     </Wrapper>
   </PageTemplate>
 )

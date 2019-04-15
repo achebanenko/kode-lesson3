@@ -27,6 +27,12 @@ export const changeAmount2 = value => ({
     value,
   }
 })
+export const changeDealSum = value => ({
+  type: types.CHANGE_DEAL_SUM,
+  payload: {
+    value,
+  }
+})
 
 export const changeDeliveryTimeFrom = value => ({
   type: types.CHANGE_DELIVERY_TIME_FROM,
@@ -48,6 +54,13 @@ export const changeAgreeToTerms = value => ({
   }
 })
 
+export const toggleModal = (modal, dialog = null) => ({
+  type: types.TOGGLE_MODAL,
+  payload: {
+    modal,
+    dialog,
+  }
+})
 export const resetExchange = () => ({
   type: types.RESET,
 })

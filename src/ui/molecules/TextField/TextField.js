@@ -110,7 +110,7 @@ export const TextField = withTheme(
 
 TextField.propTypes = {
   name: PropTypes.string,
-  status: PropTypes.oneOf(['loading', 'success']),
+  status: PropTypes.oneOf(['','loading', 'success']),
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   label: PropTypes.string,

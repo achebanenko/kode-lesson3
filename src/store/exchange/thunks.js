@@ -8,7 +8,7 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export const exchange = () => async (dispatch, getState) => {
   dispatch(actions.start())
-
+  
   try {
     
     await delay(1000)

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { PageTemplate, HBox } from '@ui/atoms'
 import { ModalHeader, SearchInput, SearchStatus } from '@ui/molecules'
@@ -35,4 +36,9 @@ export const SelectCountry = ({
       <SearchStatus status="initial" />
     </PageTemplate>
   )
+}
+
+SelectCountry.propTypes = {
+  selectCountry1: PropTypes.func.isRequired,
+  selectCountry2: PropTypes.func.isRequired,
 }

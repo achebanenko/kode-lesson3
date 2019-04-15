@@ -8,8 +8,11 @@ const initialState = {
   amount1: '',
   amount2: '',
   deal: '',
+  dealSum: '',
   deliveryTimeFrom: '',
   deliveryTimeTo: '',
+  modal: false,
+  dialog: '',
   agreeToTerms: false,
   status: '',
 }
@@ -41,16 +44,23 @@ export const reducer = (state = initialState, action) => {
         amount2: action.payload.value,
         deal: 'buy',
       }
+    case types.CHANGE_DEAL_SUM:
+      return {
+        ...state,
+        dealSum: action.payload.value,
+      }
 
     case types.CHANGE_DELIVERY_TIME_FROM:
       return {
         ...state,
         deliveryTimeFrom: action.payload.value,
+        modal: false,
       }
     case types.CHANGE_DELIVERY_TIME_TO:
       return {
         ...state,
         deliveryTimeTo: action.payload.value,
+        modal: false,
       }
 
     case types.CHANGE_AGREE_TO_TERMS:
@@ -59,6 +69,12 @@ export const reducer = (state = initialState, action) => {
         agreeToTerms: action.payload.value,
       }
     
+    case types.TOGGLE_MODAL:
+      return {
+        ...state,
+        modal: action.payload.modal,
+        dialog: action.payload.dialog,
+      }
     case types.RESET:
       return initialState
     

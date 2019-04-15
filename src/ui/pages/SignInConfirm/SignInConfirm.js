@@ -19,6 +19,7 @@ export const SignInConfirm = ({ value, status, changeCode, confirmNumber }) => (
           placeholder="1234"
           onChange={changeCode}
           value={value}
+          status={status}
         />
       </Wrapper>
       <RequestStatus
@@ -29,7 +30,13 @@ export const SignInConfirm = ({ value, status, changeCode, confirmNumber }) => (
       />
     </Flex1>
     <Wrapper>
-      <ButtonAccent onPress={confirmNumber}>Отправить</ButtonAccent>
+      <ButtonAccent 
+        loading={status === 'loading'} 
+        disabled={status === 'success'} 
+        onPress={confirmNumber}
+      >
+        Отправить
+      </ButtonAccent>
     </Wrapper>
   </PageTemplate>
 )

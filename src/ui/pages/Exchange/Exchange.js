@@ -5,7 +5,8 @@ import { routes } from '../../../routes'
 
 import { PageTemplate, Wrapper, HBox, Flex1, Divider } from '@ui/atoms'
 import { Header, ButtonAccent, SelectField, CheckboxWithText, TextField } from '@ui/molecules'
-import { Convertation, DeliveryTime } from '@ui/organisms'
+import { Convertation, DeliveryTime, Timing } from '@ui/organisms'
+import { Modal } from '@ui/pages'
 
 export const Exchange = ({
   history,
@@ -20,11 +21,15 @@ export const Exchange = ({
   amount2,
   changeAmount2,
   deal,
+  changeDealSum,
 
   deliveryTimeFrom,
   changeDeliveryTimeFrom,
   deliveryTimeTo,
   changeDeliveryTimeTo,
+  modal,
+  dialog,
+  toggleModal,
 
   agreeToTerms,
   changeAgreeToTerms,
@@ -35,7 +40,7 @@ export const Exchange = ({
 
   return (
     <PageTemplate>
-      <Header icon="back" action={history.goBack} />
+      <Header icon="back" action={() => history.push(routes.CONFIRM)} />
       <Flex1>
         <Wrapper>
           <SelectField
@@ -54,24 +59,30 @@ export const Exchange = ({
           <Convertation 
             amount1={amount1}
             amount2={amount2}
+            currency1={currency1}
+            currency2={currency2}
             deal={deal}
+            changeDealSum={changeDealSum}
+
             render={({ value1, value2 }) => (
               <>
                 <HBox />
                 <TextField
-                  label={`Валюта (${currency1})`}
+                  label={`Валюта ${currency1}`}
                   value={value1}
                   onChange={changeAmount1}
-                  tip=""
+                  tip={!country1 ? 'Выберите страну 1' : ''}
                   endAdornment="₽"
+                  disabled={!country1}
                 />
                 <HBox />
                 <TextField
-                  label={`Валюта (${currency2})`}
+                  label={`Валюта ${currency2}`}
                   value={value2}
                   onChange={changeAmount2}
-                  tip=""
+                  tip={!country2 ? 'Выберите страну 2' : ''}
                   endAdornment="£"
+                  disabled={!country2}
                 />
               </>
             )}
@@ -81,10 +92,21 @@ export const Exchange = ({
           <DeliveryTime
             fromValue={deliveryTimeFrom}
             toValue={deliveryTimeTo}
-            fromAction={() => undefined} //{changeDeliveryTimeFrom}
-            toAction={() => undefined} //{changeDeliveryTimeTo}
-            tip="Выберите время получения"
+            fromAction={() => toggleModal(true, changeDeliveryTimeFrom)}
+            toAction={() => toggleModal(true, changeDeliveryTimeTo)}
           />
+
+          {modal && (
+            <Modal 
+              toggleModal={toggleModal}
+              header="Timing"
+              component={
+                <Timing 
+                  dialog={dialog} 
+                />
+              }
+            />
+          )}
 
           <HBox />
           <CheckboxWithText 
@@ -98,7 +120,7 @@ export const Exchange = ({
       <Wrapper>
         <ButtonAccent 
           loading={status === 'loading'}
-          disabled={status === 'success' || status === 'failure'}
+          disabled={status === 'loading'}
           onPress={exchange}
         >
           Отправить
@@ -118,11 +140,20 @@ Exchange.propTypes = {
   changeAmount1: PropTypes.func.isRequired,
   amount2: PropTypes.string.isRequired,
   changeAmount2: PropTypes.func.isRequired,
+  deal: PropTypes.string,
+  changeDealSum: PropTypes.func.isRequired,
 
   deliveryTimeFrom: PropTypes.string.isRequired,
   changeDeliveryTimeFrom: PropTypes.func.isRequired,
   deliveryTimeTo: PropTypes.string.isRequired,
   changeDeliveryTimeTo: PropTypes.func.isRequired,
+
+  modal: PropTypes.bool.isRequired,
+  dialog: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+  toggleModal: PropTypes.func.isRequired,
 
   agreeToTerms: PropTypes.bool.isRequired,
   changeAgreeToTerms: PropTypes.func.isRequired,
