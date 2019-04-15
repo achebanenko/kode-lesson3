@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import * as selectors from '@store/exchange/selectors'
-import * as actions from '@store/exchange/actions'
+import * as actions from '@store/exchange/redux-act'
 import { exchange } from '@store/exchange/thunks'
 import { Exchange } from './Exchange'
 

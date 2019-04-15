@@ -4,7 +4,7 @@ import { routes } from '../../routes'
 import * as actions from './actions'
 import { getCodeValue } from './selectors'
 
-import { resetExchange } from '../exchange/actions'
+import { resetExchange } from '../exchange/redux-act'
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 

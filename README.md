@@ -12,17 +12,12 @@
 
 ### Ссылки:
 
-redux https://redux.js.org/
-
-redux-persist https://github.com/rt2zz/redux-persist
-
-reselect https://github.com/reduxjs/reselect
-
-connected-react-router https://github.com/supasate/connected-react-router
-
-redux-form https://redux-form.com/8.2.0/
-
-redux-saga https://redux-saga.js.org/
+redux https://redux.js.org/  
+redux-persist https://github.com/rt2zz/redux-persist  
+reselect https://github.com/reduxjs/reselect  
+connected-react-router https://github.com/supasate/connected-react-router  
+redux-form https://redux-form.com/8.2.0/  
+redux-saga https://redux-saga.js.org/  
 
 ### Дедлайн
 
@@ -34,10 +29,10 @@ redux-saga https://redux-saga.js.org/
 
 https://blissful-jennings-be36e0.netlify.com/  
 
-**Contents:**  
+Contents:  
 - SignIn (redux-act)
 - SignInConfirm
-- Exchange (redux)
+- Exchange (redux-act)
   - SelectCountry (with Routing)
   - Convertation (render prop)
   - Timing (Modal with createPortal)

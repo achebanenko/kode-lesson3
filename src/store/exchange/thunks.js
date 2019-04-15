@@ -1,8 +1,7 @@
 import { push } from 'connected-react-router'
-
 import { routes } from '../../routes'
-import * as actions from './actions'
-//import {} from './selectors'
+
+import * as actions from './redux-act'
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,12 +22,12 @@ export const exchange = () => async (dispatch, getState) => {
 }
 
 
-export const selectCountry1 = (id) => (dispatch) => {
-  dispatch(actions.changeCountry1(id))
+export const selectCountry1 = (id,title) => (dispatch) => {
+  dispatch(actions.changeCountry1(id,title))
   dispatch(push(routes.EXCHANGE))
 }
 
-export const selectCountry2 = (id) => (dispatch) => {
-  dispatch(actions.changeCountry2(id))
+export const selectCountry2 = (id,title) => (dispatch) => {
+  dispatch(actions.changeCountry2(id,title))
   dispatch(push(routes.EXCHANGE))
 }
