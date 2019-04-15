@@ -52,12 +52,6 @@ export const Modal = (props) => {
 	const ModalElement = (
 		<StyledModal onClick={outsideClick}>
 			<div className="modal-content">
-        {/*
-				<button className="close-button" onClick={() => toggleModal(false)}>
-					&times;
-				</button>
-        */}
-
         <ModalHeader 
           children={header}
           action={() => toggleModal(false)}

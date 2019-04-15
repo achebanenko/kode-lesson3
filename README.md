@@ -29,3 +29,29 @@ redux-saga https://redux-saga.js.org/
 Понедельник, 15 апреля, 12:00 KGD
 
 # Процесс выполнения
+
+## Результат
+
+https://blissful-jennings-be36e0.netlify.com/  
+
+**Contents:**  
+- SignIn (redux-act)
+- SignInConfirm
+- Exchange (redux)
+  - SelectCountry (with Routing)
+  - Convertation (render prop)
+  - Timing (Modal with createPortal)
+- Receipt summary
+- Branch redux-form
+
+### Time
+
+|Task|Est|Fact|
+|-|-|-|
+|Setup (extra branching)|2 hours|2 hours|
+|redux-form|3 hours|5 hours|
+|Exchange with Redux|3 hours|3 hours|
+|Convertation|2 hours|4 hours|
+|Timing for DeliveryTime|3 hours|4 hours|
+|redux-act|3 hours|2 hours|
+
